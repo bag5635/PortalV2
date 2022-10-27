@@ -71,6 +71,7 @@ public class LoginPage implements ActionListener {
                     frame.dispose();
                     Home home = new Home(email);
 
+
                 }
                 else{
                     messageLabel.setText("Try Again");
