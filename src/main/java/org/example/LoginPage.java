@@ -70,8 +70,6 @@ public class LoginPage implements ActionListener {
                     messageLabel.setText("Success!");
                     frame.dispose();
                     Home home = new Home(email);
-
-
                 }
                 else{
                     messageLabel.setText("Try Again");

@@ -49,7 +49,10 @@ public class Home implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String name = user.getText();
 
-        if(e.getSource()==UserP);
-        UserProfile userP = new UserProfile(name);
+        if (e.getSource() == UserP) ;
+        {
+            frame.dispose();
+            UserProfile userP = new UserProfile(name);
+        }
     }
 }
