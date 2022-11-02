@@ -3,8 +3,7 @@ package org.example;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Edit implements ActionListener {
 
@@ -68,9 +67,27 @@ public class Edit implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String name = user.getText();
+        String address = userAdd.getText();
+        String pharm = userPharm.getText();
+        String insur = userInsur.getText();
 
         if(e.getSource() == Save){
             message.setText("Change Request Submitted");
+
+            Editsetget change = new Editsetget();
+            change.setAddress(address);
+            change.setInsurance(insur);
+            change.setPharmacy(pharm);
+
+            EditFile editFile = new EditFile(pharm, address, insur);
+
+            try {
+                editFile.copy();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
+
         }
         if(e.getSource() == Return){
             UserProfile userP = new UserProfile(name);
