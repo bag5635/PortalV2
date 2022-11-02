@@ -49,10 +49,22 @@ public class Home implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String name = user.getText();
 
-        if (e.getSource() == UserP) ;
+        if (e.getSource() == UserP);
         {
             frame.dispose();
             UserProfile userP = new UserProfile(name);
+        }
+        if (e.getSource() == Appointment);
+        {
+            frame.dispose();
+            //example of the code needed to go to the new page and send the user logged in.
+            // Appointments app = new Appointments(name);
+        }
+        if (e.getSource() == Medication);
+        {
+            frame.dispose();
+            //example of the code needed to go to the new page and send the user logged in.
+            // Medications meds = new Medications(name);
         }
     }
 }
