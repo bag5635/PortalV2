@@ -79,7 +79,7 @@ public class Edit implements ActionListener {
             change.setInsurance(insur);
             change.setPharmacy(pharm);
 
-            EditFile editFile = new EditFile(pharm, address, insur);
+            EditFile editFile = new EditFile(pharm, address, insur, name);
 
             try {
                 editFile.copy();
@@ -91,6 +91,7 @@ public class Edit implements ActionListener {
         }
         if(e.getSource() == Return){
             UserProfile userP = new UserProfile(name);
+            frame.dispose();
         }
     }
 }

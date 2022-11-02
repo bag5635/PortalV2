@@ -5,6 +5,8 @@ public class Editsetget {
     private String pharmacy;
     private String insurance;
 
+    private String name;
+
 
     public String getInsurance(){
         return this.insurance;
@@ -27,5 +29,13 @@ public class Editsetget {
     public void setAddress(String add){
         this.address = add;
     }
+
+    public String getName(){
+        return this.name;
+    }
+    public void setName(String newName){
+        this.name = newName;
+    }
+
 
 }
