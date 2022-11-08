@@ -1,6 +1,8 @@
 package org.example;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -12,9 +14,9 @@ public class Edit implements ActionListener {
     JLabel Pharm = new JLabel("Pharmacy: "); // Line - 3
     JLabel Add = new JLabel("Address: "); // Line - 5
     JLabel Insur = new JLabel("Insurance: "); // Line - 4
-    JTextField userPharm= new JTextField();
-    JTextField userAdd= new JTextField();
-    JTextField userInsur= new JTextField();
+    JTextField userPharm= new JTextField("");
+    JTextField userAdd= new JTextField("");
+    JTextField userInsur= new JTextField("");
     JButton Save = new JButton("Save");
 
     JButton Return = new JButton("Return");
@@ -62,8 +64,68 @@ public class Edit implements ActionListener {
         frame.setLayout(null);
         frame.setVisible(true);
 
+        Save.setEnabled(false);
+
+        userInsur.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                changed();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                changed();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                changed();
+            }
+        });
+        userAdd.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                changed();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                changed();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                changed();
+            }
+        });
+        userPharm.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                changed();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                changed();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                changed();
+            }
+        });
+
     }
 
+    public void changed(){
+        if(userAdd.getText().equals("")||userInsur.getText().equals("")||userPharm.getText().equals("")){
+            Save.setEnabled(false);
+        }
+        else {
+            Save.setEnabled(true);
+        }
+
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         String name = user.getText();
@@ -72,6 +134,7 @@ public class Edit implements ActionListener {
         String insur = userInsur.getText();
 
         if(e.getSource() == Save){
+
             message.setText("Change Request Submitted");
 
             Editsetget change = new Editsetget();
