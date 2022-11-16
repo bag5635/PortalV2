@@ -65,7 +65,7 @@ public class Home implements ActionListener {
         {
             frame.dispose();
             //example of the code needed to go to the new page and send the user logged in.
-            // Medications meds = new Medications(name);
+            medications meds = new medications(name);
         }
     }
 }
