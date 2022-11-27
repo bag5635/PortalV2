@@ -41,14 +41,14 @@ import java.awt.event.ActionEvent;
 
 			Email.setText(name);
 			
-			//make panels
+			/*make panels
 			JPanel panel1 = new JPanel();
 			JPanel panel2 = new JPanel();
 			JPanel panel3 = new JPanel();
 	        JPanel panel4 = new JPanel();
 	        JPanel panel5 = new JPanel();
 	        
-	        /*frame.add(label1);
+	        frame.add(label1);
 			frame.add(label2);
 			frame.add(label3);
 			frame.add(label4);

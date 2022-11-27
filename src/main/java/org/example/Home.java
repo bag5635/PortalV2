@@ -59,7 +59,7 @@ public class Home implements ActionListener {
             frame.dispose();
 
             //example of the code needed to go to the new page and send the user logged in.
-            // Appointments app = new Appointments(name);
+            Appointments app = new Appointments(name);
         }
         if (e.getSource() == Medication)
         {
