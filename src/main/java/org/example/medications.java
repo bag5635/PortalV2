@@ -3,8 +3,11 @@ package org.example;
 import java.awt.event.ActionEvent;
 
 	import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-	import javax.swing.JButton;
+import javax.swing.JButton;
 
 	import javax.swing.JFrame;
 	import javax.swing.JLabel;
@@ -95,15 +98,53 @@ import java.awt.event.ActionEvent;
 			
 			String name = Email.getText();
 
-			//will later be converted into text files 
-			String medication1 = "Robitussin"; 
-			String prescription1 = "Prescribed by Dr Medicine to treat Acid reflux, take 2 times a day as directed on label"; 
-			String sideEffects1 = "Side Effects: itchy throat, upset stomach, kidney stones, death";
-			String warning = "If you start to experience severe reactions stop taking and call your doctor immediately";
+
+
+			String medication1 = null;
+			String prescription1 = null;
+			String sideEffects1 = null;
+			String warning = null;
+			String medication2 = null;
+			String prescription2 = null;
+			String sideEffects2 = null;
 			
-			String medication2 = "CIBINQO"; 
-			String prescription2 = "Prescribed by Dr Medicine to treat exzema, take once a day as directed on label"; 
-			String sideEffects2 = "Side Effects: infections, blood clots, hives, death";
+
+
+			try {
+				File user = new File("src/medications.txt");
+				Scanner myReader = new Scanner(user);
+				int i = 1;
+
+				while (myReader.hasNextLine()) {
+					if(i == 1) {
+						medication1 = myReader.nextLine();
+					}
+					if(i == 2) {
+						prescription1 = myReader.nextLine();
+					}
+					if(i == 3) {
+						sideEffects1 = myReader.nextLine();
+					}
+					if(i == 4) {
+						warning = myReader.nextLine();
+					}
+					if(i == 5) {
+						medication2 = myReader.nextLine();
+					}
+					if(i == 6) {
+						prescription2 = myReader.nextLine();
+					}
+					if(i == 7) {
+						sideEffects2 = myReader.nextLine();
+					}
+					i++;
+
+				}
+				myReader.close();
+			} catch (FileNotFoundException ez) {
+				System.out.println("Error");
+				ez.printStackTrace();
+			}
 
 			frame.add(label1);
 			frame.add(label2);
