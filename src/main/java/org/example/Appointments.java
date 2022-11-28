@@ -19,9 +19,9 @@ public class Appointments implements ActionListener {
     JButton Submit = new JButton("Submit");
     JButton Refresh = new JButton("Refresh");
 
-    JRadioButton app1 = new JRadioButton("January 10th 2023");
-    JRadioButton app2 = new JRadioButton("February 1st 2023");
-    JRadioButton app3 = new JRadioButton("January 20th 2023");
+    JRadioButton app1 = new JRadioButton("January 10th 2023 @ 11am with Dr.Jones");
+    JRadioButton app2 = new JRadioButton("February 1st 2023 @ 1pm with Dr.Hank");
+    JRadioButton app3 = new JRadioButton("January 20th 2023 @ 4pm with Dr.Smith");
 
     Appointments(String name){
 
@@ -47,12 +47,12 @@ public class Appointments implements ActionListener {
         Return.setBounds(30,0,125,25);
         Refresh.setBounds(175, 0, 125, 25);
         Submit.setBounds(100, 300, 125, 25);
-        label1.setBounds(30, 30, 125, 25);
+        label1.setBounds(30, 30, 200, 25);
         label2.setBounds(30, 170, 125, 25);
-        label3.setBounds(30, 200, 125,25);
-        app1.setBounds(30, 60, 125, 25);
-        app2.setBounds(30, 80, 125, 25);
-        app3.setBounds(30, 100, 125, 25);
+        label3.setBounds(30, 200, 300,25);
+        app1.setBounds(30, 60, 300, 25);
+        app2.setBounds(30, 80, 300, 25);
+        app3.setBounds(30, 100, 300, 25);
 
 
         app1.setFocusable(false);
